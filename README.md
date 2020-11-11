@@ -27,12 +27,12 @@ My fruit is: apple
   
   import org.jboss.as.quickstarts.ejb.service.Food;
   import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FrutaQualifier;
+  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
   
   import javax.ejb.Stateless;
   
   @Stateless
-  @FrutaQualifier(kind = FrutaQualifier.Kind.APPLE)
+  @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
   public class Apple extends Organic /*implements Food*/ {
       @Override
       public String name() {
@@ -46,12 +46,12 @@ My fruit is: apple
   
   import org.jboss.as.quickstarts.ejb.service.Food;
   import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FrutaQualifier;
+  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
   
   import javax.ejb.Stateless;
   
   @Stateless
-  @FrutaQualifier(kind = FrutaQualifier.Kind.ORANGE)
+  @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
   public class Orange extends Organic /*implements Food*/ {
       @Override
       public String name() {
@@ -165,4 +165,3 @@ My fruit is: apple
   16:45:08,187 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location /Users/rfelix/redhat/consultoria/rs-mprs/apps/jboss-eap-7.2/standalone/data/content/43/e042b5b433d1bb502c9ab2aa51e63585985343/content
   ```
 
-  
