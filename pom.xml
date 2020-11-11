@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- The Basics -->
+    <groupId>org.jboss.quickstarts.eap</groupId>
+    <artifactId>demo-parent</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-eap-javaee8-with-tools</artifactId>
+                <version>${version.jboss-eap-javaee8-with-tools}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>ejb</module>
+        <module>web</module>
+    </modules>
+
+    <properties>
+        <version.jboss-eap-javaee8-with-tools>7.2.0.GA</version.jboss-eap-javaee8-with-tools>
+
+        <!-- maven-compiler-plugin -->
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+
+        <wildfly.skip>true</wildfly.skip>
+    </properties>
+
+    <!-- Build Settings -->
+    <build>
+        <plugins>
+            <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.8.1</version><configuration><source>${maven.compiler.source}</source><target>${maven.compiler.target}</target></configuration></plugin>
+            <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId><version>3.1.0</version><executions><execution><id>default-war</id><phase>prepare-package</phase><configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration></execution></executions></plugin>
+            <plugin><groupId>org.wildfly.plugins</groupId><artifactId>wildfly-maven-plugin</artifactId><version>2.0.2.Final</version><configuration><skip>${wildfly.skip}</skip></configuration></plugin>
+        </plugins>
+    </build>
+
+</project>

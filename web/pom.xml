@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>client-web</artifactId>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>org.jboss.quickstarts.eap</groupId>
+		<artifactId>demo-parent</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency><groupId>${project.groupId}</groupId><artifactId>shared-ejb</artifactId><version>${project.version}</version></dependency>
+		<dependency><groupId>javax.enterprise</groupId><artifactId>cdi-api</artifactId><scope>provided</scope></dependency>
+		<dependency><groupId>org.jboss.spec.javax.annotation</groupId><artifactId>jboss-annotations-api_1.3_spec</artifactId><scope>provided</scope></dependency>
+		<dependency><groupId>org.jboss.spec.javax.ejb</groupId><artifactId>jboss-ejb-api_3.2_spec</artifactId><scope>provided</scope></dependency>
+		<dependency><groupId>org.jboss.spec.javax.servlet</groupId><artifactId>jboss-servlet-api_4.0_spec</artifactId><scope>provided</scope></dependency>
+	</dependencies>
+
+	<properties>
+		<wildfly.skip>false</wildfly.skip>
+	</properties>
+
+	<!-- Build Settings -->
+	<build>
+		<plugins>
+			<plugin><artifactId>maven-war-plugin</artifactId><version>3.2.2</version><configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration></plugin>
+		</plugins>
+	</build>
+
+</project>
