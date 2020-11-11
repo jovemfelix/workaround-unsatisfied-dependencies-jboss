@@ -1,6 +1,6 @@
 package org.jboss.as.quickstarts.helloworld;
 
-import org.jboss.as.quickstarts.ejb.qualifier.FrutaQualifier;
+import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
 import org.jboss.as.quickstarts.ejb.service.Food;
 
 import javax.inject.Inject;
@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
 
     @Inject
-    @FrutaQualifier(kind = FrutaQualifier.Kind.APPLE)
+    @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
     private Food apple;
 
     @Override

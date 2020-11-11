@@ -27,7 +27,7 @@ My fruit is: apple
   
   import org.jboss.as.quickstarts.ejb.service.Food;
   import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FrutaQualifier;
+  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
   
   import javax.ejb.Stateless;
   
@@ -46,7 +46,7 @@ My fruit is: apple
   
   import org.jboss.as.quickstarts.ejb.service.Food;
   import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FrutaQualifier;
+  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
   
   import javax.ejb.Stateless;
   
@@ -167,4 +167,3 @@ My fruit is: apple
   16:29:51,733 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: Content removed from location /Users/rfelix/redhat/consultoria/rs-mprs/apps/jboss-eap-7.2/standalone/data/content/ca/b2861fa029cb8b7d3ae7dc5eaa7ff0169f3e03/content
   ```
 
-  
