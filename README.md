@@ -18,74 +18,76 @@ My fruit is: apple
 
 # Problem
 
-- At [Orange](src/main/java/org/jboss/as/quickstarts/ejb/service/impl/Orange.java) and [Apple](src/main/java/org/jboss/as/quickstarts/ejb/service/impl/Apple.java) classes comment "duplicate" information of been Food -> remove `implements Food` like this:
+At [Orange](src/main/java/org/jboss/as/quickstarts/ejb/service/impl/Orange.java) and [Apple](src/main/java/org/jboss/as/quickstarts/ejb/service/impl/Apple.java) classes comment "duplicate" information of been Food -> remove `implements Food` like this:
 
-  ```java
-  package org.jboss.as.quickstarts.ejb.service.impl;
-  
-  import org.jboss.as.quickstarts.ejb.service.Food;
-  import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
-  
-  import javax.ejb.Stateless;
-  
-  @Stateless
-  @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
-  public class Apple extends Organic /*implements Food*/ {
-      @Override
-      public String name() {
-          return "apple";
-      }
-  }
-  ```
+```java
+package org.jboss.as.quickstarts.ejb.service.impl;
 
-  ```java
-  package org.jboss.as.quickstarts.ejb.service.impl;
-  
-  import org.jboss.as.quickstarts.ejb.service.Food;
-  import org.jboss.as.quickstarts.ejb.service.Organic;
-  import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
-  
-  import javax.ejb.Stateless;
-  
-  @Stateless
-  @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
-  public class Orange extends Organic /*implements Food*/ {
-      @Override
-      public String name() {
-          return "orange";
-      }
-  }
-  ```
+import org.jboss.as.quickstarts.ejb.service.Food;
+import org.jboss.as.quickstarts.ejb.service.Organic;
+import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
 
-  <u>**Don't have**</u> to change the [Organic](src/main/java/org/jboss/as/quickstarts/ejb/service/Organic.java) and [Fruit](src/main/java/org/jboss/as/quickstarts/ejb/service/Fruit.java) classe bellow:
+import javax.ejb.Stateless;
 
-  ```java
+@Stateless
+@FruitQualifier(kind = FruitQualifier.Kind.APPLE)
+public class Apple extends Organic /*implements Food*/ {
+    @Override
+    public String name() {
+        return "apple";
+    }
+}
+```
+
+```java
+package org.jboss.as.quickstarts.ejb.service.impl;
+
+import org.jboss.as.quickstarts.ejb.service.Food;
+import org.jboss.as.quickstarts.ejb.service.Organic;
+import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
+
+import javax.ejb.Stateless;
+
+@Stateless
+@FruitQualifier(kind = FruitQualifier.Kind.APPLE)
+public class Orange extends Organic /*implements Food*/ {
+    @Override
+    public String name() {
+        return "orange";
+    }
+}
+```
+
+<u>**Don't have**</u> to change the [Organic](src/main/java/org/jboss/as/quickstarts/ejb/service/Organic.java) and [Fruit](src/main/java/org/jboss/as/quickstarts/ejb/service/Fruit.java) classe bellow:
+
+```java
 package org.jboss.as.quickstarts.ejb.service;
-  
-  public abstract class Organic extends Fruit {
-  }
-  ```
-  
+
+public abstract class Organic extends Fruit {
+}
+```
+
 ```java
   package org.jboss.as.quickstarts.ejb.service;
 
   public abstract class Fruit implements Food {
   }
-  ```
-  
-  ### Now build and deploy.
-  
+```
+
+### 
+
+### Now build and deploy.
+
   You should get this error at server:
-  
+
   > ```shell
   > Caused by: org.jboss.weld.exceptions.DeploymentException: WELD-001408: Unsatisfied dependencies for type Food with qualifiers @FruitQualifier
   >   at injection point [BackedAnnotatedField] @Inject @FruitQualifier private org.jboss.as.quickstarts.helloworld.HelloWorldServlet.apple
   >   at org.jboss.as.quickstarts.helloworld.HelloWorldServlet.apple(HelloWorldServlet.java:0)
   > ```
-  
+
   Full log bellow:
-  
+
   ```verilog
   16:45:07,622 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: Content added at location /Users/rfelix/redhat/consultoria/rs-mprs/apps/jboss-eap-7.2/standalone/data/content/43/e042b5b433d1bb502c9ab2aa51e63585985343/content
   16:45:07,625 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 111) WFLYUT0022: Unregistered web context: '/demo' from server 'default-server'
