@@ -63,15 +63,13 @@ public class Orange extends Organic /*implements Food*/ {
 ```java
 package org.jboss.as.quickstarts.ejb.service;
 
-public abstract class Organic extends Fruit {
-}
+public abstract class Organic extends Fruit {}
 ```
 
 ```java
-  package org.jboss.as.quickstarts.ejb.service;
+package org.jboss.as.quickstarts.ejb.service;
 
-  public abstract class Fruit implements Food {
-  }
+public abstract class Fruit implements Food {}
 ```
 
 ### 
