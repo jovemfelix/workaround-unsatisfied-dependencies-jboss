@@ -32,7 +32,7 @@ My fruit is: apple
   import javax.ejb.Stateless;
   
   @Stateless
-  @FrutaQualifier(kind = FrutaQualifier.Kind.APPLE)
+  @FruitQualifier(kind = FruitQualifier.Kind.ORANGE)
   public class Apple extends Organic /*implements Food*/ {
       @Override
       public String name() {
@@ -51,7 +51,7 @@ My fruit is: apple
   import javax.ejb.Stateless;
   
   @Stateless
-  @FrutaQualifier(kind = FrutaQualifier.Kind.ORANGE)
+  @FruitQualifier(kind = FruitQualifier.Kind.ORANGE)
   public class Orange extends Organic /*implements Food*/ {
       @Override
       public String name() {
