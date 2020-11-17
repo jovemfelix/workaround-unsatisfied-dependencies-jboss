@@ -6,7 +6,7 @@ Start de JBOSS_EAP with default port
 
 ```shell
 # package and deploy
-$ mvn clean package wildfly:deploy
+$ mvn -s .m2/settings.xml clean package wildfly:deploy
 ```
 
 ## Test
