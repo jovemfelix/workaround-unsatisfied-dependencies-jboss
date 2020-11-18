@@ -12,13 +12,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
 @Documented
-public @interface FruitQualifier {
-
-    enum Kind {
-        ORANGE,
-        APPLE;
-    }
-
-    Kind kind();
+public @interface Apple {
 
 }
