@@ -1,7 +1,7 @@
 package org.jboss.as.quickstarts.helloworld;
 
 import org.jboss.as.quickstarts.ejb.qualifier.FruitQualifier;
-import org.jboss.as.quickstarts.ejb.service.Food;
+import org.jboss.as.quickstarts.ejb.service.*;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ public class HelloWorldServlet extends HttpServlet {
 
     @Inject
     @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
-    private Food apple;
+    private Organic apple;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

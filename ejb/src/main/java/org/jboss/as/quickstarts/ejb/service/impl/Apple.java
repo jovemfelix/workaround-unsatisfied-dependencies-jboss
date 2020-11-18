@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
 
 @Stateless
 @FruitQualifier(kind = FruitQualifier.Kind.APPLE)
-public class Apple extends Organic implements Food {
+public class Apple extends Organic {
     @Override
     public String name() {
         return "apple";
